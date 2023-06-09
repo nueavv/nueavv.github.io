@@ -22,24 +22,22 @@ defaults:
 
 jobs:
   build:
-    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: yarn
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build website
         run: yarn build
       - name: Upload artifact
-        uses: actions/upload-pages-arifact@v1
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./build
-
 
   deploy:
     environment:
