@@ -1,0 +1,8 @@
+{
+  "label": "Ceph",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "ceph 스토리지에 대한 문서"
+  }
+}
