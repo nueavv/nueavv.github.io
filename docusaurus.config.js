@@ -72,11 +72,11 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'k8sSidebar',
+            sidebarId: 'mySidebar',
             position: 'left',
-            label: 'K8S',
+            label: 'A-to-Z',
           },
-          { to: '/ceph', label: 'Ceph', position: 'left' },
+          //{ to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/nueavv/nueavv.github.io',
             label: 'GitHub',
@@ -91,7 +91,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'K8S',
+                label: 'A-to-Z',
                 to: '/docs/intro',
               },
             ],
