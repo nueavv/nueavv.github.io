@@ -35,22 +35,22 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],  
+  themes: ['@docusaurus/theme-mermaid'],
   plugins: [
-      [
-        'ideal-image',
-        /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
-        ({
-          quality: 70,
-          max: 1030,
-          min: 640,
-          steps: 2,
-          // Use false to debug, but it incurs huge perf costs
-          disableInDev: true,
-        }),
-      ]
+    [
+      'ideal-image',
+      /** @type {import('@docusaurus/plugin-ideal-image').PluginOptions} */
+      ({
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      }),
+    ]
   ],
-	
+
   presets: [
     [
       'classic',
@@ -81,12 +81,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/lovely.jpeg',
+      image: 'img/logo/lovely.jpeg',
       navbar: {
         title: 'nueavv',
         logo: {
           alt: 'MyLovelyDog',
-          src: 'img/star-icon.svg',
+          src: 'img/icon/cloud.png',
           href: 'https://nueavv.github.io',
         },
         items: [
