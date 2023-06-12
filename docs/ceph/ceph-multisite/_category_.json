@@ -1,0 +1,8 @@
+{
+  "label": "Ceph MultiSite",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Ceph Multi Site에 대한 문서"
+  }
+}
