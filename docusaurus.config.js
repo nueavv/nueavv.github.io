@@ -81,12 +81,13 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/myLogo.jpg',
+      image: 'img/lovely.jpeg',
       navbar: {
         title: 'nueavv',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'MyLovelyDog',
           src: 'img/star-icon.svg',
+          href: 'https://nueavv.github.io',
         },
         items: [
           {

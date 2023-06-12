@@ -5,6 +5,7 @@
  */
 
 @import url('react-medium-image-zoom/dist/styles.css');
+@import url('react-lite-youtube-embed/dist/LiteYouTubeEmbed.css');
 
 /* You can override the default Infima variables here. */
 :root {
