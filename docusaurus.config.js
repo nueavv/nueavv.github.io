@@ -85,16 +85,28 @@ const config = {
       navbar: {
         title: 'nueavv',
         logo: {
-          alt: 'MyLovelyDog',
+          alt: 'cloud',
           src: 'img/icon/cloud.png',
           href: 'https://nueavv.github.io',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'mySidebar',
+            type: 'doc',
             position: 'left',
-            label: 'A-to-Z',
+            docId: 'nueavv',
+            label: 'Docs',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'kubernetes',
+            label: 'Kubernetes',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'ceph',
+            label: 'Ceph',
           },
           //{ to: '/blog', label: 'Blog', position: 'left' },
           {
@@ -107,15 +119,15 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'A-to-Z',
-                to: '/docs/intro',
-              },
-            ],
-          }
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'A-to-Z',
+          //       to: '/docs/intro',
+          //     },
+          //   ],
+          // }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
