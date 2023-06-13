@@ -5,7 +5,44 @@ sidebar_position: 1
 # Ceph 
 
 ## 용어 정리
-- Pool
-- Scrub
+- Monitor
+- OSD
+- MDS
 - Crush
-- 
+- Erasure Coding
+- Pool
+- Placement Target [링크](https://docs.ceph.com/en/latest/radosgw/placement/#placement-targets)
+- Placement Group (PG) [링크](https://docs.ceph.com/en/latest/dev/placement-group/?highlight=placement%20group#pg-placement-group-notes)
+- Scrub [링크](https://docs.ceph.com/en/latest/cephfs/scrub/?highlight=scrub#ceph-file-system-scrub)
+
+
+## Architectures
+
+## Ceph Scrub
+분산 스토리지 환경에서는 단일 장애 지점 문제를 해결할 수 있도록 복제본 전체에서 데이터의 무결성과 일관성을 유지하는 것이 중요합니다.
+
+### 정의
+스크러빙은 파일 시스템의 fsck와 유사하게 데이터 무결성을 유지하기 위한 Ceph의 메커니즘으로, 
+기존 데이터의 불일치를 확인하는 데 도움이 됩니다.
+
+Ceph의 OSD(Objet Storage Daemon)는 정기적으로 Scrub 스레드를 실해하는데
+일부 개체를 스캔하고 다른 복제본과 비교하여 데이터가 불일치한 부분이 있는지 확인합니다. 
+만약 불일치하는 부분이 있다면, Ceph는 이 예외를 사용자가 해결할 수 있도록 던질 것입니다.
+스크러빙은 클러스터 성능에 영향을 미치는 I/O 집약적인 작업입니다.
+
+### scrubbing 종류
+1. Soft Scrubbing
+2. Deep Scrubbing
+
+#### Soft scrubbing
+오브젝트의 크기와 속성을 검사하여 데이터의 불일치를 확인합니다
+매일 osd_scrub_min_interval(기본 값 24시간)에 설정 된 값에서 
+osd_scrub_max_interval(기본 값 7일)사이에 수행됩니다.
+
+
+#### Deep scrubbing 
+데이터를 한 비트씩 데이터에 대해 체크섬을 수행하여 데이터 불일치를 탐색합니다.
+osd_deep_scrub_interval 주기에 맞춰 매주 수행됩니다. 
+
+
+### Scrubbing 흐름도 
